@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Посты</title>
+    <link href="styles/update_post.css" rel="stylesheet">
+    <link href="styles/common/buttons.css" rel="stylesheet">
+    <link href="styles/common/textboxes.css" rel="stylesheet">
+    <script src="js/update_post.js"></script>
+</head>
+<body onload="processPageLoad()">
+<div class="wrapper">
+    <div class="logo-label">Abyss Forums</div>
+    <div class="post-label">РЕДАКТИРОВАТЬ ПОСТ</div>
+    <div class="post-form">
+        <form action="/updatepost" method="post">
+            <input type="text" name="post_id" hidden="hidden" value="{{post.id}}">
+            <div class="label">Название поста (до 256 символов):</div>
+            <div class="control-wrapper">
+                <input type="text" name="post_name" maxlength="256" class="textbox" id="postNameTextBox" oninput="processTextChange()" value="{{post.postName}}">
+            </div>
+            <div class="label">Текст поста (до 512 символов):</div>
+            <div class="control-wrapper">
+                <textarea name="post_text" maxlength="512" class="textarea" id="postTextTextArea" oninput="processTextChange()">{{post.postText}}</textarea>
+            </div>
+            <div class="control-wrapper">
+                <input type="submit" value="Опубликовать" class="button" id="submitButton">
+            </div>
+        </form>
+        <form action="/readpost" method="post">
+            <input type="text" name="post_id" hidden="hidden" value="{{post.id}}">
+            <div class="control-wrapper">
+                <input type="submit" value="Отмена" class="red-button">
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

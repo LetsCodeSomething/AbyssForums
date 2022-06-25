@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link href="styles/registration.css" rel="stylesheet">
+    <link href="styles/common/buttons.css" rel="stylesheet">
+    <link href="styles/common/textboxes.css" rel="stylesheet">
+    <script src="js/registration.js"></script>
+</head>
+<body onload="processPageLoad()">
+<div class="wrapper">
+    <div class="logo-label">Abyss Forums</div>
+    <div class="registration-label">РЕГИСТРАЦИЯ</div>
+    <div class="registration-form">
+        <form action="/registration" method="post">
+            <div class="label">Имя пользователя:</div>
+            <input type="text" class="textbox" id="loginTextBox" oninput="processTextChange()" name="login">
+            <div class="label">Пароль:</div>
+            <input type="password" class="textbox" id="passwordTextBox" oninput="processTextChange()" name="password">
+            <div class="control-wrapper">
+                <input type="submit" class="button" value="Зарегистрироваться" disabled="disabled" id="registerButton">
+            </div>
+            <div class="error-label">{{errorMessage}}</div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

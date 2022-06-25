@@ -1,0 +1,35 @@
+.textbox {
+    border: solid 2px #6c6c6c;
+    border-radius: 2px;
+    outline: none;
+    transition:.3s;
+    min-height: 20px;
+    width: 95%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.textbox:focus {
+    border-color: #39197c;
+    box-shadow: 0 0 2px #39197c;
+}
+
+.textarea {
+    border: solid 2px #6c6c6c;
+    border-radius: 2px;
+    outline: none;
+    transition:.3s;
+    min-height: 20px;
+    width: 95%;
+    height: 390px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    resize: none;
+}
+
+.textarea:focus {
+    border-color: #39197c;
+    box-shadow: 0 0 2px #39197c;
+}

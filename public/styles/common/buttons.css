@@ -1,0 +1,88 @@
+.button {
+    background-color: #6525e5;
+    color: white;
+    border: solid 2px #39197c;
+    border-radius: 2px;
+    outline: none;
+    transition:.3s;
+    width: 100%;
+    height: 30px;
+    flex-shrink: 0;
+}
+
+.button:hover {
+    box-shadow: 0 0 6px #6525e5;
+}
+
+.button:active {
+    background-color: #220d4f;
+    box-shadow: 0 0 6px #39197c;
+}
+
+.button:disabled {
+    background-color: #ececec;
+    border: solid 2px #6c6c6c;
+    color: black;
+    box-shadow: none;
+}
+
+
+
+.small-button {
+    background-color: #ececec;
+    color: black;
+    border: solid 2px #6c6c6c;
+    border-radius: 2px;
+    outline: none;
+    transition:.3s;
+    height: 30px;
+    width: 100%;
+}
+
+.small-button:hover {
+    color: white;
+    background-color: #6525e5;
+    box-shadow: 0 0 6px #6525e5;
+}
+
+.small-button:active {
+    background-color: #220d4f;
+    box-shadow: 0 0 6px #39197c;
+}
+
+.small-button:disabled {
+    background-color: #ececec;
+    border: solid 2px #6c6c6c;
+    color: black;
+    box-shadow: none;
+}
+
+
+
+.red-button {
+    background-color: #ececec;
+    color: black;
+    border: solid 2px #6c6c6c;
+    border-radius: 2px;
+    outline: none;
+    transition:.3s;
+    height: 30px;
+    width: 100%;
+}
+
+.red-button:hover {
+    color: white;
+    background-color: #e52525;
+    box-shadow: 0 0 6px #e52525;
+}
+
+.red-button:active {
+    background-color: #a61313;
+}
+
+.red-button:disabled {
+    background-color: #ececec;
+    border: solid 2px #6c6c6c;
+    color: black;
+    box-shadow: none;
+}

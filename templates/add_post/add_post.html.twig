@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Посты</title>
+    <link href="styles/add_post.css" rel="stylesheet">
+    <link href="styles/common/buttons.css" rel="stylesheet">
+    <link href="styles/common/textboxes.css" rel="stylesheet">
+    <script src="js/add_post.js"></script>
+</head>
+<body onload="processPageLoad()">
+<div class="wrapper">
+    <div class="logo-label">Abyss Forums</div>
+    <div class="post-label">НАПИСАТЬ ПОСТ</div>
+    <div class="post-form">
+        <form action="/addpost" method="post">
+            <div class="label">Название поста (до 256 символов):</div>
+            <div class="control-wrapper">
+                <input type="text" name="post_name" maxlength="256" class="textbox" id="postNameTextBox" oninput="processTextChange()">
+            </div>
+            <div class="label">Текст поста (до 512 символов):</div>
+            <div class="control-wrapper">
+                <textarea name="post_text" maxlength="512" class="textarea" id="postTextTextArea" oninput="processTextChange()"></textarea>
+            </div>
+            <div class="control-wrapper">
+                <input type="submit" value="Опубликовать" class="button" id="submitButton" disabled="disabled">
+            </div>
+        </form>
+        <form action="/posts" method="post">
+            <div class="control-wrapper">
+                <input type="submit" value="Отмена" class="red-button">
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

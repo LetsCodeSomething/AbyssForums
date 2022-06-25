@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Посты</title>
+    <link href="styles/posts.css" rel="stylesheet">
+    <link href="styles/common/buttons.css" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+    <div class="logo-label">Abyss Forums</div>
+    <div class="posts-label">ПОСТЫ</div>
+    <div class="posts-form">
+        <div class="posts-list">
+        {% for post in posts %}
+            <div class="posts-list-item">
+                {% if post.user.userPermissions == 0 %}
+                    <div class="label">{{post.postDateTime|date("d-m-Y H:i:s")}} <span style="font-weight:bold;">{{post.user.userLogin}}</span>: <span style="font-weight:bold;">{{post.postName}}</span></div>
+                {% else %}
+                    <div class="label">{{post.postDateTime|date("d-m-Y H:i:s")}} <span style="font-weight:bold;color:red;">[АДМИН] {{post.user.userLogin}}</span>: <span style="font-weight:bold;">{{post.postName}}</span></div>
+                {% endif %}
+                <div class="small-control-wrapper">
+                    <form action="/readpost" method="post">
+                        <input type="text" name="post_id" hidden="hidden" value="{{post.id}}">
+                        <input class="small-button" type="submit" value="Читать">
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+        <form action="/addpost" method="post">
+            <div class="control-wrapper">
+                <input type="submit" value="Написать пост" class="button">
+            </div>
+        </form>
+        <form action="/profile" method="post">
+            <div class="control-wrapper">
+                <input type="submit" value="Вернуться в профиль" class="button">
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

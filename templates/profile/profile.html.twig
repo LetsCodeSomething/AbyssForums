@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль</title>
+    <link href="styles/profile.css" rel="stylesheet">
+    <link href="styles/common/buttons.css" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+    <div class="logo-label">Abyss Forums</div>
+    <div class="profile-label">ПРОФИЛЬ</div>
+    <div class="profile-form">
+        <div class="label">Имя пользователя: <span style="font-weight:bold;">{{login}}</span></div>
+        {% if permissions == 0 %}
+            <div class="label">Статус: ПОЛЬЗОВАТЕЛЬ</div>
+        {% else %}
+            <div class="label">Статус: <span style="font-weight:bold;color:red;">АДМИНИСТРАТОР</span></div>
+        {% endif %}
+        <div class="label">Достижения:</div>
+        <div class="achievements-list">
+        {% for achievement in achievements %}
+            <div class="achievements-list-item">
+                <div class="small-label"><span style="font-weight:bold;">{{achievement.achievementName}}</span></div>
+                <div class="small-label">{{achievement.achievementDescription}}</div>
+                <div class="small-label">Баллы: <span style="color:#6525e5;">{{achievement.achievementPoints}}</span></div>
+            </div>
+        {% endfor %}
+        </div>
+        <div class="control-wrapper">
+            <form action="/posts" method="post">
+                <input type="submit" class="button" value="Смотреть посты">
+            </form>
+        </div>
+        <div class="control-wrapper">
+            <form action="/logout" method="post">
+                <input type="submit" class="button" value="Выход">
+            </form>
+        </div>
+        <div class="control-wrapper">
+            <form action="/deleteprofile" method="post">
+                <input type="text" name="login" value="{{login}}" hidden="hidden">
+                <input type="text" name="token" value="{{token}}" hidden="hidden">
+                <input type="submit" class="red-button" value="Удалить профиль">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
